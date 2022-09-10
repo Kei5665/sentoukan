@@ -1,24 +1,13 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+## 今回の目標
 
-Things you may want to cover:
+- viewでhotwireを使ってみる
 
-* Ruby version
+- できるだけ保守性の高いコードを書く
 
-* System dependencies
+- jsをMVCに分ける
 
-* Configuration
+- しっかりテストを導入する
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## 

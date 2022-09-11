@@ -13,6 +13,9 @@ function initMap() {
     position: uluru,
     map: map,
   });
+
+  // スタートボタンをマップ上に表示
+  map.controls[google.maps.ControlPosition.BOTTOM].push(document.getElementById('search_box'));
 }
 
 window.initMap = initMap;

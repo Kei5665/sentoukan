@@ -1,9 +1,21 @@
-.card
-  .card-body
-    a[href="#"]
-      h3
-        - @shop.name
-    p.mb-3.opacity-60
-      |  The time is now for it to be okay to be great. People in this world shun people for being great. For being a bright color. For standing out. 
-    button.button.button-pink[data-ripple-light="true"]
-      |  Read More 
+.container.mx-auto.py-5.px-5.bg-white.md:rounded-3xl.md:px-20
+  section.basic-info.mt-12
+    h3.font-bold.text-4xl
+      = @shop.name
+    p.text-gray-400.font-semibold.text-lg.mt-4
+      = @shop.address
+    .flex.text-gray-500.text-base.flex-wrap
+      p.text-gray-400.font-semibold.text-lg.mt-4
+        | 開館時間 :
+      p.text-gray-400.font-semibold.text-lg.mt-4
+        = @shop.opening_hours
+    .flex.text-gray-500.text-base.flex-wrap
+      p.text-gray-400.font-semibold.text-lg.mt-4
+        | 閉館時間 :
+      p.text-gray-400.font-semibold.text-lg.mt-4
+        = @shop.closing_time
+    = link_to "スタート", maps_path, class: 'button button-pink cursor-pointer'
+  section.near-shop
+    p.text-base.my-5 周辺の #{@shops.count} 件の検索結果
+    div.near-shop
+      = render partial: 'shops/shop', collection: @shops

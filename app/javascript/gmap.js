@@ -97,7 +97,7 @@ function initMap() {
         animation: google.maps.Animation.DROP
       });
       shopMarker[i].addListener('click', () => {
-        // とりあえず画面遷移させたい → location.hash = `#sauna-${gon.shops[i]['id']}`;
+        window.location.href = `/shop/${gon.shops[i]['id']}`;
       });
     }
   }

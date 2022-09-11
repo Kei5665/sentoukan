@@ -1,5 +1,6 @@
 #map {
   height: 100%;
+  width: 100%;
   position: static !important;
 }
 /* Optional: Makes the sample page fill the window. */
@@ -8,4 +9,8 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+}
+.card {
+  position: absolute;
+  bottom: 100px;
 }

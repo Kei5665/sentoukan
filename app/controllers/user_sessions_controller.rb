@@ -4,6 +4,9 @@ class UserSessionsController < ApplicationController
     random_value = SecureRandom.hex
     user = User.create!(name: "ゲスト", email: "test_#{random_value}@example.com",)
     auto_login(user)
+
+    quest = user.quests.build(shop_id: params[:shop_id])
+    quest.save!
     redirect_to quests_path
   end
 end

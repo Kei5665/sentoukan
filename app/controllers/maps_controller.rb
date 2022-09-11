@@ -18,7 +18,7 @@ class MapsController < ApplicationController
 
   private
 
-  def geo_params
-    params.require(:q).permit(:latitude, :longitude)
-  end
+    def geo_params
+      params.require(:q).permit(:latitude, :longitude)
+    end
 end

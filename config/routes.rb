@@ -1,4 +1,4 @@
 Rails.application.routes.draw do
-  get 'maps', to: 'maps#index'
+  resources :maps, only: %i[index show]
   get 'shop/:id', to: 'shops#show'
 end

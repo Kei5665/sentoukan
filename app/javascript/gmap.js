@@ -2,6 +2,7 @@ function initMap() {
 
   let lat = gon.latitude;
   let lng = gon.longitude;
+  let shopMarker = [];
   // 現在地が設定されてない時はフォームに初期位置をセットしておく
   document.getElementById('lat').value = lat;
   document.getElementById('lng').value = lng;
@@ -76,7 +77,30 @@ function initMap() {
     } else {
       window.alert('お使いの端末では対応しておりません...。');
     }
-  });  
+  });
+
+  // もし検索ヒットしたら
+  if (gon.shops) {
+
+    for (let i = 0; i < gon.shops.length; i++) {
+
+      // 検索結果のサウナの座標取得
+      markerLatLng = new google.maps.LatLng({
+        lat: parseFloat(gon.shops[i]['latitude']),
+        lng: parseFloat(gon.shops[i]['longitude'])
+      });
+
+      // マーカーの作成
+      shopMarker[i] = new google.maps.Marker({
+        position: markerLatLng,
+        map: map,
+        animation: google.maps.Animation.DROP
+      });
+      shopMarker[i].addListener('click', () => {
+        // とりあえず画面遷移させたい → location.hash = `#sauna-${gon.shops[i]['id']}`;
+      });
+    }
+  }
 }
 window.initMap = initMap;
 

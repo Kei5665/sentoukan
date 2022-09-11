@@ -1,9 +1,7 @@
-let pin = null;
-let lat = gon.latitude;
-let lng = gon.longitude;
-let shopMarker = [];
-
 function initMap() {
+
+  let lat = gon.latitude;
+  let lng = gon.longitude;
   // 現在地が設定されてない時はフォームに初期位置をセットしておく
   document.getElementById('lat').value = lat;
   document.getElementById('lng').value = lng;
@@ -26,7 +24,7 @@ function initMap() {
   circle = new google.maps.Circle({
     center: new google.maps.LatLng(lat, lng),
     map: map,
-    radius: 1500,
+    radius: 2000,
     clickable: false,
     fillColor: '#297EDD',
     fillOpacity: 0.1,
@@ -98,7 +96,7 @@ updateCircle = (lat, lng, map) => {
   circle = new google.maps.Circle({
     center: new google.maps.LatLng(lat, lng),
     map: map,
-    radius: 1500,
+    radius: 2000,
     clickable: false,
     fillColor: '#297EDD',
     fillOpacity: 0.1,

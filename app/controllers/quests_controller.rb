@@ -12,6 +12,10 @@ class QuestsController < ApplicationController
     quest.save!
   end
 
+  def calculate
+    
+  end
+
   private
 
     def quest_params

@@ -17,19 +17,6 @@ function initMap() {
     animation: google.maps.Animation.BOUNCE
   });
 
-  // 円の描写
-  circle = new google.maps.Circle({
-    center: new google.maps.LatLng(lat, lng),
-    map: map,
-    radius: 2000,
-    clickable: false,
-    fillColor: '#297EDD',
-    fillOpacity: 0.1,
-    strokeColor: '#297EDD',
-    strokeOpacity: 0.6,
-    strokeWeight: 0.7,
-  });
-
   // ボタンをマップ上に表示
   map.controls[google.maps.ControlPosition.BOTTOM].push(document.getElementById('search_box'));
 
@@ -50,11 +37,8 @@ function initMap() {
           map.setCenter(pos);
           // pinを更新
           updatePin(pos, map);
-          // サークルを更新
-          updateCircle(pos.lat, pos.lng, map);
-          // フォームに値を入れる
-          document.getElementById('lat').value = pos.lat;
-          document.getElementById('lng').value = pos.lng;
+          // ポリラインの描写
+          updatePolyline(pos.lat, pos.lng, gon.shop, map); 
         },
         (error) => {
           var errorInfo = [
@@ -76,21 +60,33 @@ function initMap() {
   });
 
   if (gon.shop) {
+    // 検索結果の銭湯の座標取得
+    markerLatLng = new google.maps.LatLng({
+      lat: parseFloat(gon.shop['latitude']),
+      lng: parseFloat(gon.shop['longitude'])
+    });
 
-      // 検索結果のサウナの座標取得
-      markerLatLng = new google.maps.LatLng({
-        lat: parseFloat(gon.shop['latitude']),
-        lng: parseFloat(gon.shop['longitude'])
-      });
-
-      // マーカーの作成
-      shopMarker = new google.maps.Marker({
-        position: markerLatLng,
-        map: map,
-        animation: google.maps.Animation.DROP
-      });
-      shopMarker.addListener('click', () => {
-      });
+    // マーカーの作成
+    shopMarker = new google.maps.Marker({
+      position: markerLatLng,
+      map: map,
+      animation: google.maps.Animation.DROP
+    });
+    // shopMarker.addListener('click', () => {
+    // });
+    // ポリラインの描写
+    polylineCoordinates = [
+      { lat: lat, lng: lng },
+      { lat: parseFloat(gon.shop['latitude']), lng: parseFloat(gon.shop['longitude'])},
+    ];
+    polylinePath = new google.maps.Polyline({
+      path: polylineCoordinates,
+      geodesic: true,
+      strokeColor: "red",
+      strokeOpacity: 0.5,
+      strokeWeight: 8,
+    });
+    polylinePath.setMap(map);
   }
 }
 window.initMap = initMap;
@@ -105,18 +101,18 @@ updatePin = (pos, map) => {
   });
 }
 
-updateCircle = (lat, lng, map) => {
-  circle.setMap(null);
-  circle = null;
-  circle = new google.maps.Circle({
-    center: new google.maps.LatLng(lat, lng),
-    map: map,
-    radius: 2000,
-    clickable: false,
-    fillColor: '#297EDD',
-    fillOpacity: 0.1,
-    strokeColor: '#297EDD',
-    strokeOpacity: 0.6,
-    strokeWeight: 0.7,
+updatePolyline = (lat, lng, shop, map) => {
+  polylinePath.setMap(null)
+  updateCoordinates = [
+    { lat: lat, lng: lng },
+    { lat: parseFloat(shop['latitude']), lng: parseFloat(shop['longitude'])},
+  ];
+  updatePath = new google.maps.Polyline({
+    path: updateCoordinates,
+    geodesic: true,
+    strokeColor: "red",
+    strokeOpacity: 0.5,
+    strokeWeight: 8,
   });
+  updatePath.setMap(map);
 }

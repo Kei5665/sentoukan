@@ -1,2 +1,4 @@
-h1 Quests#index
-p Find me in app/views/quests/index.html.slim
+= stylesheet_link_tag "gmap"
+- set_meta_tags title: 'マップ検索'
+.container
+  == render 'quests/map'

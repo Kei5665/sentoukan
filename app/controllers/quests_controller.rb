@@ -1,5 +1,9 @@
 class QuestsController < ApplicationController
   def index
+    quest = current_user.quests.last
+    gon.latitude = quest.latitude.to_f
+    gon.longitude = quest.longitude.to_f
+    gon.shop = quest.shop
   end
 
   def create

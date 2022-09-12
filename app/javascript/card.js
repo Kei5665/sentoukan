@@ -1,6 +1,8 @@
+// カードの上下運動
 let checkUp = document.getElementById('up')
 let checkDown = document.getElementById('down')
 let card = document.getElementById('card')
+
 function cardUp() {
   card.classList.add("up")
   checkUp.classList.add("disable")
@@ -15,3 +17,9 @@ function cardDown() {
 }
 checkUp.addEventListener("click", cardUp);
 checkDown.addEventListener("click", cardDown);
+
+// アラートの削除
+function closeAlert(){
+  let closeBtn = document.getElementById('close')
+  closeBtn.remove()
+}

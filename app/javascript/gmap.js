@@ -48,7 +48,7 @@ function initMap() {
   // 現在地へ移動ボタン
   const currentLocation = document.createElement('button');
   currentLocation.textContent = '現在地へ';
-  currentLocation.classList.add('block', 'button', 'button-blue', 'cursor-pointer')
+  currentLocation.classList.add('block', 'button', 'button-blue', 'cursor-pointer', 'font-bold')
   map.controls[google.maps.ControlPosition.TOP_RIGHT].push(currentLocation );
 
   currentLocation.addEventListener('click', () => {

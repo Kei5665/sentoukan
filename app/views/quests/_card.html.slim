@@ -1,5 +1,6 @@
 .card.down#card
   .card-body
+    turbo-frame#error
     .text-center
       button.button.button-gradient.button-green#up
       button.button.button-gradient.button-green.disable#down
@@ -7,5 +8,9 @@
       = @shop.name
     p.mb-3.opacity-60
       = @shop.address
-    button.button.button-pink[data-ripple-light="true"]
-      |  check
+    .calculate-box
+      = form_with scope: :q, url: calculate_path, method: :get do |f|
+        => f.number_field :latitude, id: 'lat', step: '0.0000001', value: '', type: 'hidden'
+        => f.number_field :longitude, id: 'lng', step: '0.0000001', value: '', type: 'hidden'
+        .text-center.mt-10
+          => f.submit '距離を計算する', class: 'button button-pink cursor-pointer text-lg font-bold'

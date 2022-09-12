@@ -6,7 +6,7 @@ class MapsController < ApplicationController
     if params[:q]
       latitude = geo_params[:latitude].to_f
       longitude = geo_params[:longitude].to_f
-      shops = Shop.all.within(search_radius, origin: [latitude, longitude]).by_distance(origin: [latitude, longitude])
+      shops = Shop.within(search_radius, origin: [latitude, longitude])
       gon.latitude = latitude
       gon.longitude = longitude
       gon.shops = shops

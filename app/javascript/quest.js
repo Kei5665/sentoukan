@@ -3,6 +3,10 @@ function initMap() {
   let lat = gon.latitude;
   let lng = gon.longitude;
 
+  // フォームに初期位置をセットしておく
+  document.getElementById('lat').value = lat;
+  document.getElementById('lng').value = lng;  
+
   const map = new google.maps.Map(document.getElementById("map"), {
     zoom: 14,
     center: { lat: lat, lng: lng },
@@ -46,7 +50,10 @@ function initMap() {
           // pinを更新
           updatePin(pos, map);
           // ポリラインの描写
-          updatePolyline(pos.lat, pos.lng, gon.shop, map); 
+          updatePolyline(pos.lat, pos.lng, gon.shop, map);
+          // フォームに値を入れる
+          document.getElementById('lat').value = pos.lat;
+          document.getElementById('lng').value = pos.lng;
         },
         (error) => {
           var errorInfo = [

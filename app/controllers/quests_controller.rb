@@ -3,6 +3,12 @@ class QuestsController < ApplicationController
   end
 
   def create
-    debugger
+    quest = Quest.new(quest_params)
   end
+
+  private
+
+    def quest_params
+      params.require(:quest).permit(:shop_id, :user_id, :latitude, :longitude)
+    end
 end

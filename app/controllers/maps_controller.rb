@@ -10,6 +10,7 @@ class MapsController < ApplicationController
       gon.latitude = latitude
       gon.longitude = longitude
       gon.shops = shops
+      gon.user = current_user
     else
       gon.latitude = default_lat
       gon.longitude = default_lng

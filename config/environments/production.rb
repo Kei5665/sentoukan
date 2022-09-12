@@ -33,6 +33,7 @@ Rails.application.configure do
   # jsの読み込み
   config.assets.precompile += ['gmap.js']
   config.assets.precompile += ['quest.js']
+  config.assets.precompile += ['card.js']
 
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = "http://assets.example.com"

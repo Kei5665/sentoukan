@@ -62,6 +62,7 @@ Rails.application.configure do
   # jsの読み込み
   config.assets.precompile += ['gmap.js']
   config.assets.precompile += ['quest.js']
+  config.assets.precompile += ['card.js']
 
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true

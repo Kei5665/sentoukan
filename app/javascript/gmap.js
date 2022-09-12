@@ -12,6 +12,14 @@ function initMap() {
     center: { lat: lat, lng: lng },
     disableDefaultUI: true,
     gestureHandling: 'greedy',
+    styles: [
+      {
+        "elementType": "labels",
+        "stylers": [
+          { "visibility": "off" }
+        ]
+      }
+    ]
   });
 
   // 初期ピン

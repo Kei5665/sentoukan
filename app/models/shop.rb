@@ -9,4 +9,6 @@ class Shop < ApplicationRecord
   validates :address, presence: true, uniqueness: true
   validates :latitude, presence: true
   validates :longitude, presence: true
+  
+  has_many :quests, dependent: :destroy
 end

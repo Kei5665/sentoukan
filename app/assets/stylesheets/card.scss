@@ -1,4 +1,13 @@
 .card {
+  width:100%;
   position: absolute;
-  bottom: 100px;
+}
+.down {
+  bottom: -5rem;
+}
+.up {
+  bottom: 0;
+}
+.disable {
+  display: none;
 }

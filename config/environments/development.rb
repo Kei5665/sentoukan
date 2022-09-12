@@ -59,8 +59,10 @@ Rails.application.configure do
   # Suppress logger output for asset requests.
   config.assets.quiet = true
 
-  # gmap.jsの読み込み
+  # jsの読み込み
   config.assets.precompile += ['gmap.js']
+  config.assets.precompile += ['quest.js']
+  config.assets.precompile += ['card.js']
 
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true

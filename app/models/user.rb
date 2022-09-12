@@ -3,6 +3,8 @@ class User < ApplicationRecord
   validates :name, presence: true
   validates :email, presence: true, uniqueness: true
 
+  has_many :quests, dependent: :destroy
+
   enum role: {
     general: 0,
     admin: 1

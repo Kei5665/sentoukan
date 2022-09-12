@@ -16,16 +16,11 @@ class QuestsController < ApplicationController
     search_radius = 0.1
     latitude = geo_params[:latitude].to_f
     longitude = geo_params[:longitude].to_f
-    quest = current_user.quests.last
-    @shop = quest.shop
-    gon.latitude = quest.latitude.to_f
-    gon.longitude = quest.longitude.to_f
-    gon.shop = quest.shop
     arrival_point = Shop.within(search_radius, origin: [latitude, longitude])
     if arrival_point.present?
       redirect_to maps_path
     else
-      render turbo_stream: turbo_stream.replace(
+      render turbo_stream: turbo_stream.prepend(
         'error',
         partial: 'shared/error',
       )

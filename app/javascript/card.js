@@ -17,3 +17,9 @@ function cardDown() {
 }
 checkUp.addEventListener("click", cardUp);
 checkDown.addEventListener("click", cardDown);
+
+// アラートの削除
+function closeAlert(){
+  let closeBtn = document.getElementById('close')
+  closeBtn.remove()
+}

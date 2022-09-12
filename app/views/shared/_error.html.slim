@@ -1,6 +1,3 @@
-.calculate-box
-  = form_with scope: :q, url: calculate_path, method: :get do |f|
-    => f.number_field :latitude, id: 'lat', step: '0.0000001', value: '', type: 'hidden'
-    => f.number_field :longitude, id: 'lng', step: '0.0000001', value: '', type: 'hidden'
-    .text-center.mt-10
-      => f.submit '目的地にもっと近づいて！', class: 'button button-orange cursor-pointer text-lg font-bold'
+.text-center#close
+  button.button.button-orange.text-lg.font-bold.mb-4 onclick="closeAlert()"
+    | 目的地にもっと近づいて！

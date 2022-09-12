@@ -18,6 +18,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_11_193823) do
     t.bigint "user_id", null: false
     t.bigint "shop_id", null: false
     t.integer "status", default: 0
+    t.decimal "latitude", null: false
+    t.decimal "longitude", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["shop_id"], name: "index_quests_on_shop_id"

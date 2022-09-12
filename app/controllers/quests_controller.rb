@@ -4,6 +4,7 @@ class QuestsController < ApplicationController
 
   def create
     quest = Quest.new(quest_params)
+    quest.save!
   end
 
   private

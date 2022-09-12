@@ -97,8 +97,9 @@ function initMap() {
         animation: google.maps.Animation.DROP
       });
       shopMarker[i].addListener('click', () => {
-        const data = { shop_id : gon.shops[i]['id'],user_id: gon.user['id'],latitude : lat, longitude : lng}
-        axios.post( "/quests", data)
+        const data = { shop_id : gon.shops[i]['id'],user_id: gon.user['id'],latitude : lat, longitude : lng};
+        axios.post( "/quests", data);
+        window.location.href = "/quests";
       });
     }
   }

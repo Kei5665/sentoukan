@@ -14,7 +14,7 @@
         | 閉館時間 :
       p.text-gray-400.font-semibold.text-lg.mt-4
         = @shop.closing_time
-    = link_to "スタート", guest_login_path(shop_id: @shop.id), class: 'button button-pink cursor-pointer'
+    = link_to "スタート", quests_path, class: 'button button-pink cursor-pointer'
   section.near-shop
     p.text-base.my-5 周辺の #{@shops.count} 件の検索結果
     div.near-shop

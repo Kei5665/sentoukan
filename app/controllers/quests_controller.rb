@@ -18,6 +18,7 @@ class QuestsController < ApplicationController
     longitude = geo_params[:longitude].to_f
     arrival_point = Shop.within(search_radius, origin: [latitude, longitude])
     if arrival_point.present?
+      current_user.get_money
       redirect_to maps_path
     else
       render turbo_stream: turbo_stream.prepend(

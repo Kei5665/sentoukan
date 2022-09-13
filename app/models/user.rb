@@ -9,4 +9,10 @@ class User < ApplicationRecord
     general: 0,
     admin: 1
   }
+
+  def get_money
+    compensation_amount = 800
+    self.earned_money += compensation_amount
+    self.save!
+  end
 end

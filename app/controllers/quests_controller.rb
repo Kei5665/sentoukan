@@ -10,9 +10,9 @@ class QuestsController < ApplicationController
   def create
     quest = current_user.quests.build(quest_params)
     if quest.save
-      redirect_to quests_path, green: "クエストを開始します"
+      redirect_to quests_path, green: "クエストを開始します！"
     else
-      redirect_to maps_path
+      redirect_to maps_path, pink: "クエストを開始できませんでした"
     end
   end
 
@@ -21,9 +21,9 @@ class QuestsController < ApplicationController
     latitude = geo_params[:latitude].to_f
     longitude = geo_params[:longitude].to_f
     arrival_point = Shop.within(search_radius, origin: [latitude, longitude])
-    if arrival_point.present?
+    if arrival_point.blank?
       current_user.get_money
-      redirect_to maps_path
+      redirect_to maps_path, green: "クリアおめでとうございます！報酬は800円です！"
     else
       render turbo_stream: turbo_stream.prepend(
         'error',

@@ -3,6 +3,7 @@ function initMap() {
   let lat = gon.latitude;
   let lng = gon.longitude;
   let shopMarker = [];
+  let infoWindow = [];
   // 現在地が設定されてない時はフォームに初期位置をセットしておく
   document.getElementById('lat').value = lat;
   document.getElementById('lng').value = lng;
@@ -94,17 +95,19 @@ function initMap() {
         lat: parseFloat(gon.shops[i]['latitude']),
         lng: parseFloat(gon.shops[i]['longitude'])
       });
-
       // マーカーの作成
       shopMarker[i] = new google.maps.Marker({
         position: markerLatLng,
         map: map,
         animation: google.maps.Animation.DROP
       });
-      shopMarker[i].addListener('click', () => {
-        const data = { shop_id : gon.shops[i]['id'],user_id: gon.user['id'],latitude : lat, longitude : lng};
-        axios.post( "/quests", data);
-        window.location.href = "/quests";
+      // 情報ウィンドウには投稿情報モーダルへのリンクを入れる
+      infoWindow[i] = new google.maps.InfoWindow({
+        content: '<div class="card shadow-none">'+'<div class="card-body">'+'<h3>Material Tailwind</h3>'+'<p class="mb-3 opacity-60">The time is now.</p>'+'<form action="/quests" accept-charset="UTF-8" method="post"><input value='+gon.shops[i]['id']+' type="hidden" name="q[shop_id]"><input value='+lat+' type="hidden" name="q[latitude]"><input value='+lng+' type="hidden" name="q[longitude]"><input type="submit" name="commit" value="ここに行く" class="button button-pink text-lg font-bold" data-disable-with="ここへ行く"></form>'+'</div>'+'</div>'
+      });
+      // マーカークリックで情報ウィンドウを表示
+      shopMarker[i].addListener('click', function() {
+        infoWindow[i].open(map, shopMarker[i]);
       });
     }
   }
@@ -135,4 +138,10 @@ updateCircle = (lat, lng, map) => {
     strokeOpacity: 0.6,
     strokeWeight: 0.7,
   });
+}
+
+// フラッシュの削除
+function closeFlash(){
+  let closeFlashBtn = document.getElementById('flash')
+  closeFlashBtn.remove()
 }

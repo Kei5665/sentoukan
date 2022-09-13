@@ -139,3 +139,9 @@ updateCircle = (lat, lng, map) => {
     strokeWeight: 0.7,
   });
 }
+
+// フラッシュの削除
+function closeFlash(){
+  let closeFlashBtn = document.getElementById('flash')
+  closeFlashBtn.remove()
+}

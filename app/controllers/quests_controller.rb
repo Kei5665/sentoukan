@@ -8,8 +8,12 @@ class QuestsController < ApplicationController
   end
 
   def create
-    quest = Quest.new(quest_params)
-    quest.save!
+    quest = current_user.quests.build(quest_params)
+    if quest.save
+      redirect_to quests_path, green: "クエストを開始します"
+    else
+      redirect_to maps_path
+    end
   end
 
   def calculate
@@ -31,7 +35,7 @@ class QuestsController < ApplicationController
   private
 
     def quest_params
-      params.require(:quest).permit(:shop_id, :user_id, :latitude, :longitude)
+      params.require(:q).permit(:shop_id, :latitude, :longitude)
     end
 
     def geo_params

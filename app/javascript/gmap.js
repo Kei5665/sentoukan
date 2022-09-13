@@ -103,7 +103,7 @@ function initMap() {
       });
       // 情報ウィンドウには投稿情報モーダルへのリンクを入れる
       infoWindow[i] = new google.maps.InfoWindow({
-        content: '<div class="card shadow-none">'+'<div class="card-body">'+'<h3>Material Tailwind</h3>'+'<p class="mb-3 opacity-60">The time is now.</p>'+'<form action="/maps" accept-charset="UTF-8" method="post"><input value='+gon.shops[i]['id']+' type="hidden" name="q[shop_id]"><input value='+lat+' type="hidden" name="q[latitude]"><input value='+lng+' type="hidden" name="q[longitude]"><input type="submit" name="commit" value="ここに行く" class="button button-pink text-lg font-bold" data-disable-with="ここへ行く"></form>'+'</div>'+'</div>'
+        content: '<div class="card shadow-none">'+'<div class="card-body">'+'<h3>Material Tailwind</h3>'+'<p class="mb-3 opacity-60">The time is now.</p>'+'<form action="/quests" accept-charset="UTF-8" method="post"><input value='+gon.shops[i]['id']+' type="hidden" name="q[shop_id]"><input value='+lat+' type="hidden" name="q[latitude]"><input value='+lng+' type="hidden" name="q[longitude]"><input type="submit" name="commit" value="ここに行く" class="button button-pink text-lg font-bold" data-disable-with="ここへ行く"></form>'+'</div>'+'</div>'
       });
       // マーカークリックで情報ウィンドウを表示
       shopMarker[i].addListener('click', function() {

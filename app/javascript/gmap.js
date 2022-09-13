@@ -44,13 +44,10 @@ function initMap() {
 
   // ボタンをマップ上に表示
   map.controls[google.maps.ControlPosition.BOTTOM].push(document.getElementById('search_box'));
-
+  // navbarをマップ上に表示
+  map.controls[google.maps.ControlPosition.TOP].push(document.getElementById('nav'));
   // 現在地へ移動ボタン
-  const currentLocation = document.createElement('button');
-  currentLocation.textContent = '現在地へ';
-  currentLocation.classList.add('block', 'button', 'button-blue', 'cursor-pointer', 'font-bold')
-  map.controls[google.maps.ControlPosition.TOP_RIGHT].push(currentLocation );
-
+  const currentLocation = document.getElementById('position_btn');
   currentLocation.addEventListener('click', () => {
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition(

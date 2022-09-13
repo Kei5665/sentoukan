@@ -29,8 +29,6 @@ function initMap() {
     animation: google.maps.Animation.BOUNCE
   });
 
-  // ボタンをマップ上に表示
-  map.controls[google.maps.ControlPosition.BOTTOM].push(document.getElementById('search_box'));
   // navbarをマップ上に表示
   map.controls[google.maps.ControlPosition.TOP].push(document.getElementById('nav'));
   // 現在地へ移動ボタン

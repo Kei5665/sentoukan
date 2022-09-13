@@ -1,0 +1,50 @@
+<%= form_with model: form, url: scrapes_path, method: :post, local: true do |form| %>
+  <table class="table">
+    <thread>
+      <tr>
+        <th>
+          <input type="checkbox" class="checkbox" />
+        </th>
+        <th>店名</th>
+        <th>住所</th>
+        <th>開館時間</th>
+        <th>閉館時間</th>
+        <th>緯度</th>
+        <th>経度</th>
+      </tr>
+    </thead>
+    <tbody>
+      <%= form.fields_for :posts do |f| %>
+        <tr>
+          <th>
+            <label>
+  
+            </label>
+          </th>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+          <td>
+
+          </td>
+        </tr>
+      <%end%>
+    </tbody>
+  </table>
+<%= form.submit "一括登録", class: 'btn'%>
+<%end%>

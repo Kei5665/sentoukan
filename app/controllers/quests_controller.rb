@@ -17,13 +17,13 @@ class QuestsController < ApplicationController
   end
 
   def calculate
-    search_radius = 2.0
+    search_radius = 1.6
     latitude = geo_params[:latitude].to_f
     longitude = geo_params[:longitude].to_f
     arrival_point = Shop.within(search_radius, origin: [latitude, longitude])
     if arrival_point.present?
       current_user.get_money
-      redirect_to maps_path, green: "クリアおめでとうございます！報酬は800円です！"
+      redirect_to maps_path, green: "お疲れ様でした！報酬は800円です！"
     else
       render turbo_stream: turbo_stream.prepend(
         'error',

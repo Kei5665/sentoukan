@@ -67,8 +67,9 @@ gem 'gon'
 #Security
 gem 'dotenv-rails'
 
-# Geolocation
+# Find data within current position
 gem 'geokit-rails'
+gem 'geokit'
 
 # Authentication
 gem 'sorcery'

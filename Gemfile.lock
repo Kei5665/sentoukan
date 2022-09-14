@@ -377,6 +377,7 @@ DEPENDENCIES
   debug
   dotenv-rails
   factory_bot_rails
+  geokit
   geokit-rails
   gon
   google_maps_service

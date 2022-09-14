@@ -34,7 +34,7 @@ function initMap() {
   circle = new google.maps.Circle({
     center: new google.maps.LatLng(lat, lng),
     map: map,
-    radius: 2000,
+    radius: 2500,
     clickable: false,
     fillColor: '#297EDD',
     fillOpacity: 0.1,
@@ -130,7 +130,7 @@ updateCircle = (lat, lng, map) => {
   circle = new google.maps.Circle({
     center: new google.maps.LatLng(lat, lng),
     map: map,
-    radius: 2000,
+    radius: 2500,
     clickable: false,
     fillColor: '#297EDD',
     fillOpacity: 0.1,

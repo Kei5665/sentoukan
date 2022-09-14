@@ -6,16 +6,16 @@ class ScrapesController < ApplicationController
   end
 
   def scrape
-    data = Scraping.new
-    scraped_data = data.scrape(params[:page_number],params[:area_name],params[:area_num])
+    scrape = Scrape.new
+    scraped_data = scrape.scrape(params[:page_num])
 
-    product_collection = Form::ProductCollection.new
-    product_collection.set_scraped_data(scraped_data)
+    shop_collection = Form::ShopCollection.new
+    shop_collection.set_scraped_data(scraped_data)
 
     render turbo_stream: turbo_stream.replace(
       'scrapes',
-      partial: 'admin/posts/after_scrapes',
-      locals: { form: product_collection },
+      partial: 'scrapes/after_scrapes',
+      locals: { form: shop_collection },
     )
   end
 end

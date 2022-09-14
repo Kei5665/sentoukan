@@ -1,9 +1,9 @@
-<%= form_with url: scrapes_path,local: true do |f|%>
-  <label class="input-group">
-    <%= f.label :page_num %>
-    <%= f.text_field :page_num,class:'input input-bordered input-warning' %>
-    <%= f.submit class:'btn'%>
-  </label>
+<%= form_with url: scrape_path,local: true do |f|%>
+  <div class="input-group input-group-static mt-8 w-96 mx-auto">
+    <%= f.label :page_num, class: 'form-label' %>
+    <%= f.text_field :page_num,class:'form-control' %>
+    <%= f.submit class:'button button-blue mt-4'%>
+  </div>
 <%end%>
-
 <turbo-frame id="scrapes"></turbo-frame>
+<script src="https://unpkg.com/@material-tailwind/html@latest/scripts/input.js"></script>

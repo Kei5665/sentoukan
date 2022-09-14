@@ -24,10 +24,10 @@
               = f.text_field :name, class: 'form-control'
           td
             .input-group.input-group-dynamic
-              = f.text_field :address, class: 'form-control'
+              = f.text_field :address, class: 'form-control',rows: "7"
           td
             .input-group.input-group-dynamic
-              = f.text_field :opening_hours, class: 'form-control'
+              = f.text_area :opening_hours, class: 'form-control'
           td
             .input-group.input-group-dynamic
               = f.number_field :latitude, class: 'input input-bordered input-primary'

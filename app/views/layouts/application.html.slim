@@ -13,7 +13,6 @@ html
     link href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css" rel="stylesheet"
     script src="https://unpkg.com/@material-tailwind/html@latest/scripts/script-name.js"
     = stylesheet_link_tag "gmap"
-    = stylesheet_link_tag "card"
   body
     = yield
     script src="https://maps.googleapis.com/maps/api/js?key=#{ENV['API_KEY']}&callback=initMap&libraries=places"

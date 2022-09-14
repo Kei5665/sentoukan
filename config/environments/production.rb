@@ -35,6 +35,8 @@ Rails.application.configure do
   config.assets.precompile += ['quest.js']
   config.assets.precompile += ['card.js']
 
+  config.assets.css_compressor = nil
+
   # Enable serving of images, stylesheets, and JavaScripts from an asset server.
   # config.asset_host = "http://assets.example.com"
 

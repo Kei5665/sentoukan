@@ -18,7 +18,7 @@ class Form::ShopCollection < Form::Base
   def save
     Shop.transaction do
       self.shops.map do |shop|
-        if shop.availability # ここでチェックボックスにチェックを入れている商品のみが保存される
+        if shop.avalability
           shop.save
         end
       end

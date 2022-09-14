@@ -92,8 +92,8 @@ function initMap() {
     polylinePath = new google.maps.Polyline({
       path: polylineCoordinates,
       geodesic: true,
-      strokeColor: "red",
-      strokeOpacity: 0.5,
+      strokeColor: "#297EDD",
+      strokeOpacity: 0.4,
       strokeWeight: 8,
     });
     polylinePath.setMap(map);

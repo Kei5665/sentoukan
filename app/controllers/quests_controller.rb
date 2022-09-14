@@ -18,9 +18,10 @@ class QuestsController < ApplicationController
 
   def calculate
     search_radius = 1.0
+    shop = current_user.quests.last.shop
     latitude = geo_params[:latitude].to_f
     longitude = geo_params[:longitude].to_f
-    arrival_point = Shop.within(search_radius, origin: [latitude, longitude])
+    arrival_point = shop.within(search_radius, origin: [latitude, longitude])
     if arrival_point.present?
       current_user.get_money
       redirect_to maps_path, green: "お疲れ様でした！報酬は800円です！"

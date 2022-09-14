@@ -1,6 +1,9 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
-
-  # Defines the root path route ("/")
-  # root "articles#index"
+  root 'static_pages#top'
+  get '/guest_login', to: 'user_sessions#guest_login'
+  get '/calculate', to: 'quests#calculate'
+  post '/scrape', to: 'scrapes#scrape'
+  resources :maps, only: %i[index]
+  resources :quests, only: %i[index create]
+  resources :scrapes, only: %i[index create]
 end

@@ -1,0 +1,3 @@
+<% flash.each do |message_type, message| %>
+<button id="flash" onclick="closeFlash()" class="my-2 text-lg font-bold w-full button button-<%= message_type %>"><%= message %></button>
+<% end %>

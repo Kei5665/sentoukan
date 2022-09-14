@@ -1,0 +1,20 @@
+.card.down#card
+  .card-body
+    turbo-frame#error
+    .text-center.mb-2
+      button.button.button-gradient.button-orange.py-1.px-2.font-bold#up
+        svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"
+          path stroke-linecap="round" stroke-linejoin="round" d="M4.5 12.75l7.5-7.5 7.5 7.5m-15 6l7.5-7.5 7.5 7.5"
+      button.button.button-gradient.button-orange.disable.py-1.px-2.font-bold#down
+        svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"
+          path stroke-linecap="round" stroke-linejoin="round" d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5"
+    h3.font-bold
+      = @shop.name
+    p.mb-3.opacity-60
+      = @shop.address
+    .calculate-box
+      = form_with scope: :q, url: calculate_path, method: :get do |f|
+        => f.number_field :latitude, id: 'lat', step: '0.0000001', value: '', type: 'hidden'
+        => f.number_field :longitude, id: 'lng', step: '0.0000001', value: '', type: 'hidden'
+        .text-center.mt-10
+          => f.submit 'クエストを完了する', class: 'button button-pink cursor-pointer text-lg font-bold'

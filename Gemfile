@@ -51,6 +51,39 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+# scss
+gem 'sassc-rails'
+
+# UI/UX
+gem 'slim-rails'
+gem 'html2slim'
+
+# SEO
+gem 'meta-tags'
+
+# JavaScript
+gem 'gon'
+
+#Security
+gem 'dotenv-rails'
+
+# Find data within current position
+gem 'geokit-rails'
+gem 'geokit'
+
+# Authentication
+gem 'sorcery'
+
+# scrape
+gem 'mechanize'
+
+# geocode
+gem 'google_maps_service'
+gem 'hurley', :git => "https://github.com/AkermanisM/hurley.git"
+
+# deploy
+gem 'rexml', '~> 3.2', '>= 3.2.4'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]

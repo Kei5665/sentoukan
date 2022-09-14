@@ -1,0 +1,8 @@
+== render 'shared/flash_message'
+= form_with url: scrape_path,local: true do |f|
+  .input-group.input-group-static.my-8.w-96.mx-auto
+    = f.label :scrape_url
+    = f.text_field :scrape_url,class:'form-control'
+    = f.submit class:'button button-blue mt-4'
+turbo-frame#scrapes
+script[src="https://unpkg.com/@material-tailwind/html@latest/scripts/input.js"]

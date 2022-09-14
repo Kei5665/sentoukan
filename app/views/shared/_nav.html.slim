@@ -1,0 +1,25 @@
+nav#nav.navbar.w-full.bg-white
+  .container-lg.px-0
+    ul.navbar-nav.w-full.justify-between
+      li.flex.content-center.menu
+        button.nav-link  menu-trigger="true" aria-expanded="true" data-ripple-light="true"
+          span
+            svg.w-9.h-9 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+              path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z"
+        == render 'shared/menu'
+      li.flex.content-center
+        .nav-link
+          / Check the code in helpers
+          p.text-2xl.font-bold
+            = number_of_quest_experiences
+          span.text-2xl.font-bold.opacity-60.ml-2
+            = earned_money
+      li.flex.content-center
+        .nav-link
+          span
+            button#position_btn.button.button-blue.font-bold.p-2
+              svg.w-6.h-6 xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor"
+                path stroke-linecap="round" stroke-linejoin="round" d="M15 10.5a3 3 0 11-6 0 3 3 0 016 0z"
+                path stroke-linecap="round" stroke-linejoin="round" d="M19.5 10.5c0 7.142-7.5 11.25-7.5 11.25S4.5 17.642 4.5 10.5a7.5 7.5 0 1115 0z"
+    == render 'shared/flash_message'
+script src="https://unpkg.com/@material-tailwind/html@latest/scripts/menu.js"

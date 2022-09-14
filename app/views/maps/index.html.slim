@@ -1,5 +1,5 @@
-= stylesheet_link_tag "gmap"
 - set_meta_tags title: 'マップ検索'
-.container
-  == render 'shared/nav'
-  == render 'maps/map'
+#map
+== render 'shared/nav'
+== render 'maps/search_box'
+= javascript_include_tag 'gmap.js'

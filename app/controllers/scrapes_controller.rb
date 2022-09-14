@@ -13,7 +13,7 @@ class ScrapesController < ApplicationController
 
   def scrape
     scrape = Scrape.new
-    scraped_data = scrape.scrape(params[:page_num])
+    scraped_data = scrape.scrape(params[:scrape_url])
 
     shop_collection = Form::ShopCollection.new
     shop_collection.set_scraped_data(scraped_data)

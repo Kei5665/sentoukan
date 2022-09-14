@@ -2,7 +2,7 @@ class Scrape
   require 'mechanize'
   require 'google_maps_service'
 
-  def scrape(page_num)
+  def scrape(scrape_url)
     shops = []
     urls = []
 
@@ -11,7 +11,7 @@ class Scrape
 
     # gem mechanize
     agent = Mechanize.new
-    page = agent.get(ENV['SCRAPE_URL'] + "#{page_num}")
+    page = agent.get(scrape_url)
     elements = page.search('main .mx-5 a')
 
     elements.each do |ele|

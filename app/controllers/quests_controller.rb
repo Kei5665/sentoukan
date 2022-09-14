@@ -21,7 +21,7 @@ class QuestsController < ApplicationController
     latitude = geo_params[:latitude].to_f
     longitude = geo_params[:longitude].to_f
     arrival_point = Shop.within(search_radius, origin: [latitude, longitude])
-    if arrival_point.blank?
+    if arrival_point.present?
       current_user.get_money
       redirect_to maps_path, green: "クリアおめでとうございます！報酬は800円です！"
     else

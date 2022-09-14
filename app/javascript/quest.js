@@ -112,17 +112,18 @@ updatePin = (pos, map) => {
 }
 
 updatePolyline = (lat, lng, shop, map) => {
-  polylinePath.setMap(null)
+  polylinePath.setMap(null);
+  polylinePath = null;
   updateCoordinates = [
     { lat: lat, lng: lng },
     { lat: parseFloat(shop['latitude']), lng: parseFloat(shop['longitude'])},
   ];
-  updatePath = new google.maps.Polyline({
+  polylinePath = new google.maps.Polyline({
     path: updateCoordinates,
     geodesic: true,
-    strokeColor: "red",
-    strokeOpacity: 0.5,
+    strokeColor: "#297EDD",
+    strokeOpacity: 0.4,
     strokeWeight: 8,
   });
-  updatePath.setMap(map);
+  polylinePath.setMap(map);
 }

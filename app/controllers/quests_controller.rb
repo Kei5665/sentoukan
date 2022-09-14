@@ -17,7 +17,7 @@ class QuestsController < ApplicationController
   end
 
   def calculate
-    search_radius = 0.8
+    search_radius = 1.0
     latitude = geo_params[:latitude].to_f
     longitude = geo_params[:longitude].to_f
     arrival_point = Shop.within(search_radius, origin: [latitude, longitude])

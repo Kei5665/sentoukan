@@ -1,6 +1,6 @@
 class MapsController < ApplicationController
   def index
-    search_radius = 2.0
+    search_radius = 2.5
     default_lat = 35.68141918996472
     default_lng = 139.76709261065324
     if params[:q]

@@ -14,3 +14,6 @@ body {
 .navbar .navbar-nav {
   margin-left: 0;
 }
+.dropdown-menu:before {
+  display: none;
+}

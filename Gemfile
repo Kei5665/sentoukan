@@ -87,6 +87,14 @@ gem 'rexml', '~> 3.2', '>= 3.2.4'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'factory_bot_rails'
+  # 変更しないでください
+  gem 'rubocop'
+  gem 'rubocop-rails'
+  gem 'rubocop-checkstyle_formatter'
+  gem 'rspec-rails'
+  gem 'rspec_junit_formatter'
+  ## ここまで
 end
 
 group :development do
@@ -98,12 +106,6 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
-  # Lint check
-  gem 'rubocop'
-  gem 'rubocop-rails'
-  # Test
-  gem 'factory_bot_rails'
-  gem 'rspec-rails'
 end
 
 group :test do

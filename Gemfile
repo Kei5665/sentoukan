@@ -87,6 +87,7 @@ gem 'rexml', '~> 3.2', '>= 3.2.4'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem 'faker'
   gem 'factory_bot_rails'
   # 変更しないでください
   gem 'rubocop'

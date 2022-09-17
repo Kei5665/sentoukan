@@ -14,6 +14,9 @@
         | で
         span.text-5xl.font-bold.ml-2
           | 稼ぐ
+  - if current_user.present?
+    = link_to "ログイン", maps_path, class: 'button button-pink text-3xl font-bold cursor-pointer mt-8 mb-4'
+  - else
     = link_to "スタート", guest_login_path, class: 'button button-pink text-3xl font-bold cursor-pointer mt-8 mb-4'
   h2#how_to_use.font-semibold.my-8
     | 3つのステップ

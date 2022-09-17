@@ -2,17 +2,25 @@ doctype html
 html
   head
     title
-      | Sentoukan
+      | 銭湯館
     meta[name="viewport" content="width=device-width,initial-scale=1"]
+    = favicon_link_tag('favicon.ico')
     = csrf_meta_tags
     = csp_meta_tag
+    meta name="twitter:card" content="summary_large_image"
+    meta property="og:title" content="銭湯館"
+    meta property="og:url" content="<%= request.url %>"
+    meta property="og:description" content="サウナで稼ぐ 銭湯で稼ぐ そんな世界をあなたに"
+    meta property="og:image" content="https://sentoukan.herokuapp.com/assets/logo-99cf1a1325317bc0771ddf3403a2ed4b9d8192fd8e0b2ecc3a6aa5a790ff0c05.png"
     = include_gon
     = stylesheet_link_tag "tailwind", "inter-font", "data-turbo-track": "reload"
     = stylesheet_link_tag "application", "data-turbo-track": "reload"
     = javascript_importmap_tags
     link href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css" rel="stylesheet"
-    script src="https://unpkg.com/@material-tailwind/html@latest/scripts/script-name.js"
+    link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet"
     = stylesheet_link_tag "gmap"
+    - if Rails.env.production?
+      = render 'layouts/google_analytics'
   body
     = yield
     script src="https://maps.googleapis.com/maps/api/js?key=#{ENV['API_KEY']}&callback=initMap&libraries=places"

@@ -7,4 +7,26 @@ module ApplicationHelper
     "#{current_user.earned_money}" + "円"
   end
 
+  def user_name
+    "#{current_user.name}" + "様"
+  end
+
+  def full_title(page_title = '')
+    base_title = '銭湯館'
+    if page_title.empty?
+      base_title
+    else
+      "#{page_title} | #{base_title}"
+    end
+  end
+  
+  def full_url(path)
+    domain = if Rails.env.development?
+               'http://0.0.0.0:3000'
+             else
+               'https://sentoukan.herokuapp.com/'
+             end
+    "#{domain}#{path}"
+  end
+  
 end

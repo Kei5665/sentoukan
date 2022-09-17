@@ -1,16 +1,15 @@
 class UsersController < ApplicationController
   def new
-    @user = User.new
+    @user = current_user
   end
 
-  def create
-    user = User.new(user_params)
-    if user.save
-      auto_login(user)
+  def update
+    if current_user.update(user_params)
+      auto_login(current_user)
       redirect_to maps_path, green: "ユーザー登録が完了しました！"
     else
       flash.now[:pink] = "ユーザー登録に失敗しました"
-      render 'quests/show'
+      render :new
     end
   end
 

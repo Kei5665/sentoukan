@@ -1,0 +1,4 @@
+= search_form_for @q, class: 'flex justify-center' do |f|
+  .input-group-outline.input-group-static.my-6.w-96.text-center
+    = f.search_field :name_or_address_cont, class: 'form-control p-4', placeholder: '店舗名・エリア'
+    = f.submit '検索する', class: 'button button-blue my-6 font-bold text-lg'

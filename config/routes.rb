@@ -9,4 +9,5 @@ Rails.application.routes.draw do
   resources :quests, only: %i[index create]
   resources :scrapes, only: %i[index create]
   resources :users, only: %i[new update]
+  resources :shops, only: %i[index]
 end

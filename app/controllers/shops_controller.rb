@@ -1,4 +1,9 @@
 class ShopsController < ApplicationController
+  def index
+    @q = Shop.ransack(params[:q])
+    @shops = @q.result.order(created_at: :desc).page(params[:page])
+  end
+
   def show
     @shop = Shop.find(params[:id])
     longitude = @shop.longitude

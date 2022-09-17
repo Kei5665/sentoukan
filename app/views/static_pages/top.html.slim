@@ -1,38 +1,41 @@
-.container.mx-auto.py-5.px-5.bg-white
-  = image_tag('logo.png', class: 'md:w-2/5 mx-auto mt-16 md:mt-24')
-  .text-center.font-bold.my-7.md:text-3xl.md:my-10.md:tracking-widest
-    h1.mb-8.text-5xl.font-bold
+= stylesheet_link_tag "top"
+.container.mx-auto.py-5.px-5.bg-white.text-center
+  = image_tag('logo.png', class: 'mx-auto mt-16')
+  .my-7
+    h1.mb-8.text-6xl.font-bold
       | サウナ
       span.text-3xl
         | で
         span.text-5xl.font-bold.ml-3
           | 稼ぐ
-    h1.mb-5.text-5xl.font-bold
+    h1.mb-5.text-6xl.font-bold
       | 銭湯
       span.text-3xl.ml-2
         | で
         span.text-5xl.font-bold.ml-2
           | 稼ぐ
-    = link_to "スタート", guest_login_path, class: 'button button-pink text-lg font-bold cursor-pointer my-6'
-  .explane.grid.mx-auto class="md:grid-cols-3 sm:grid-cols-1"
+    = link_to "スタート", guest_login_path, class: 'button button-pink text-3xl font-bold cursor-pointer my-8'
+  h2.font-semibold.my-8
+    | 3つのステップ
+  .explane.grid.gap-4.mx-auto class="md:grid-cols-3 sm:grid-cols-1"
     .card
       .card-body
-        a[href="#"]
-          h3
-            | Material Tailwind
-        p.mb-3.opacity-60
-          |  The time is now for it to be okay to be great. People in this world shun people for being great. For being a bright color. For standing out. 
+        h3
+          | 1. 探す
+        p.text-base.mb-3.leading-loose.tracking-wider.text-left
+          |  現在位置から2.5km以内の銭湯•サウナを探すことができます（東京都内のみ）。表示された銭湯•サウナの中から自由に選んでください。
+        i.fa-solid.fa-magnifying-glass.fa-4x.mt-4.mb-2
     .card
       .card-body
-        a[href="#"]
-          h3
-            | Material Tailwind
-        p.mb-3.opacity-60
-          |  The time is now for it to be okay to be great. People in this world shun people for being great. For being a bright color. For standing out. 
+        h3
+          | 2. 行く
+        p.text-base.mb-3.leading-loose.tracking-wider.text-left
+          |  銭湯•サウナを選んだらクエストが開始されます。クエストとは行く銭湯•サウナに応じて報酬が発生する仕組みのことです。現在は1.5km以内に近づいたらクエストがクリアできます。
+        i.fa-solid.fa-person-walking.fa-4x
     .card
       .card-body
-        a[href="#"]
-          h3
-            | Material Tailwind
-        p.mb-3.opacity-60
-          |  The time is now for it to be okay to be great. People in this world shun people for being great. For being a bright color. For standing out. 
+        h3
+          | 3. 貰う
+        p.text-base.mb-3.leading-loose.tracking-wider.text-left
+          |  クエストをクリアしたら報酬が発生します。現在は一律800円に設定してあります。たくさん銭湯•サウナに行き、たくさん報酬をもらいましょう。
+        i.fa-solid.fa-yen-sign.fa-4x

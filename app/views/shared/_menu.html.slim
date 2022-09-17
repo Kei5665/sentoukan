@@ -1,9 +1,14 @@
 ul.dropdown-menu.p-2
   li
+    = link_to root_path(anchor: 'how_to_use'), class: 'menu-item' do
+      .flex.items-center.py-1
+        span.my-auto.ml-2.normal-case
+          | 使い方
+  li
     = link_to maps_path, class: 'menu-item' do
       .flex.items-center.py-1
         span.my-auto.ml-2.normal-case
-          | ホーム
+          | マップ
   li
     = link_to quests_path, class: 'menu-item' do
       .flex.items-center.py-1
@@ -19,11 +24,6 @@ ul.dropdown-menu.p-2
       .flex.items-center.py-1
         span.my-auto.ml-2.normal-case
           | アカウント
-  li
-    a.menu-item[href="#"]
-      .flex.items-center.py-1
-        span.my-auto.ml-2.normal-case
-          | サービスの説明
   li
     a.menu-item[href="#"]
       .flex.items-center.py-1

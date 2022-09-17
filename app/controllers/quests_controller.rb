@@ -5,6 +5,8 @@ class QuestsController < ApplicationController
     gon.latitude = quest.latitude.to_f
     gon.longitude = quest.longitude.to_f
     gon.shop = quest.shop
+    geo_params = {latitude: quest.latitude, longitude: quest.longitude}
+    @distance =  (distance(geo_params,@shop) * 1000).round(0)
   end
 
   def create

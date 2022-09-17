@@ -9,22 +9,4 @@
       .mt-4.text-center
         a.button.button-text.mr-auto[href="#"]
           i.fab.fa-twitter.text-lg.fa-3x.text-white
-  .card-body
-    form[action="role"]
-      h3.mt-2.mb-4.text-center.font-bold.tracking-wider.text-slate-500
-        | ユーザー登録はこちら
-      .input-group-outline.input-group.my-3
-        label.form-label
-          | Email
-        input.form-control[type="email"]
-      .input-group-outline.input-group.my-3
-        label.form-label
-          | Password
-        input.form-control[type="password"]
-    .form-check.form-switch.my-7.ml-1.flex.items-center
-      input#remember.absolute.z-10.h-5.w-8.cursor-pointer.opacity-0[data-attribute="toggle"]
-    button.button.button-pink.w-full.font-bold.text-xl
-      | ユーザー登録
-    a[href="#"]
-      p.mt-5.mb-0.text-center.text-lg
-        | ホームへ
+  == render 'quests/form'

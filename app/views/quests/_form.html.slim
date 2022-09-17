@@ -1,0 +1,12 @@
+.card-body
+  = form_with model: @user,local: true do |f|
+    h5.mt-2.mb-4.text-center.font-bold.tracking-wider.text-slate-500
+      | ユーザー登録はこちら
+    .input-group-outline.input-group.my-3
+      = f.label :name, class: 'form-label'
+      = f.text_field :name, class:'form-control'
+    .input-group-outline.input-group.my-3
+      = f.label :email, class: 'form-label'
+      = f.text_field :email, class:'form-control', type: 'email'
+    = f.submit '登録する', class:'button button-pink w-full font-bold text-xl'
+= link_to 'ホームへ', root_path, class: 'text-center text-lg pb-4'

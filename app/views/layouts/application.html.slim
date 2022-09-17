@@ -19,6 +19,8 @@ html
     link href="https://unpkg.com/@material-tailwind/html@latest/styles/material-tailwind.css" rel="stylesheet"
     link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet"
     = stylesheet_link_tag "gmap"
+    - if Rails.env.production?
+      = render 'layouts/google_analytics'
   body
     = yield
     script src="https://maps.googleapis.com/maps/api/js?key=#{ENV['API_KEY']}&callback=initMap&libraries=places"

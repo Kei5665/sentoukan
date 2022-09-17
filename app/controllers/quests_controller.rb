@@ -21,15 +21,22 @@ class QuestsController < ApplicationController
   def calculate
     within_can_clear_limits = 1.25
     shop = current_user.quests.last.shop
-    distance = distance(geo_params,shop)
-    if distance < within_can_clear_limits
+    @distance = (distance(geo_params,shop) * 1000).round(0)
+    if @distance < within_can_clear_limits
       current_user.get_money
       redirect_to new_user_path, green: "お疲れ様でした！報酬は800円です！"
     else
-      render turbo_stream: turbo_stream.prepend(
-        'error',
-        partial: 'shared/error',
-      )
+      render turbo_stream: [
+        turbo_stream.prepend(
+          'error',
+          partial: 'shared/error',  
+        ),
+        turbo_stream.update(
+          'distance',
+          partial: "quests/distance",
+          locals: { distance: @distance}
+        )
+      ]
     end
   end
 

@@ -1,5 +1,38 @@
-.container.mx-auto.py-5.px-5.bg-white.md:rounded-3xl.md:px-20
-  section.basic-info.mt-12
-    h3.font-bold.text-4xl
-      | 銭湯館
-    = link_to "スタート", guest_login_path, class: 'button button-pink text-lg font-bold cursor-pointer'
+.container.mx-auto.py-5.px-5.bg-white
+  = image_tag('logo.png', class: 'md:w-2/5 mx-auto mt-16 md:mt-24')
+  .text-center.font-bold.my-7.md:text-3xl.md:my-10.md:tracking-widest
+    h1.mb-8.text-5xl.font-bold
+      | サウナ
+      span.text-3xl
+        | で
+        span.text-5xl.font-bold.ml-3
+          | 稼ぐ
+    h1.mb-5.text-5xl.font-bold
+      | 銭湯
+      span.text-3xl.ml-2
+        | で
+        span.text-5xl.font-bold.ml-2
+          | 稼ぐ
+    = link_to "スタート", guest_login_path, class: 'button button-pink text-lg font-bold cursor-pointer my-6'
+  .explane.grid.mx-auto class="md:grid-cols-3 sm:grid-cols-1"
+    .card
+      .card-body
+        a[href="#"]
+          h3
+            | Material Tailwind
+        p.mb-3.opacity-60
+          |  The time is now for it to be okay to be great. People in this world shun people for being great. For being a bright color. For standing out. 
+    .card
+      .card-body
+        a[href="#"]
+          h3
+            | Material Tailwind
+        p.mb-3.opacity-60
+          |  The time is now for it to be okay to be great. People in this world shun people for being great. For being a bright color. For standing out. 
+    .card
+      .card-body
+        a[href="#"]
+          h3
+            | Material Tailwind
+        p.mb-3.opacity-60
+          |  The time is now for it to be okay to be great. People in this world shun people for being great. For being a bright color. For standing out. 

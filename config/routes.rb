@@ -6,4 +6,5 @@ Rails.application.routes.draw do
   resources :maps, only: %i[index]
   resources :quests, only: %i[index create]
   resources :scrapes, only: %i[index create]
+  resources :users, only: %i[new create]
 end

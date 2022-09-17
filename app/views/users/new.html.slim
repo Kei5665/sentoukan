@@ -1,0 +1,12 @@
+= render 'shared/nav'
+.card.my-16.md:w-96.mx-auto
+  .card-header.mx-4.-mt-6
+    .drop-shadow-xl.pe-1.rounded-lg.bg-blue-300.p-3
+      h3.mt-2.mb-0.text-center.font-bold.text-white.pt-2.tracking-wide
+        | ツイッターのシェア
+        br
+        | お願いします !
+      .mt-4.text-center
+        = link_to "https://twitter.com/share?url=https://sentoukan.herokuapp.com/&text=#{current_user.name}さんが銭湯館のクエストをクリアしました!!&hashtags=銭湯館,サウナ,銭湯,東京", title: "クエストクリア!!", target: '_blank', class: 'button button-text mr-auto' do
+          i.fab.fa-twitter.text-lg.fa-3x.text-white
+  == render 'users/form'

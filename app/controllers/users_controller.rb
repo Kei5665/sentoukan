@@ -1,6 +1,12 @@
 class UsersController < ApplicationController
-  def update
-    if current_user.update(user_update_params)
+  def new
+    @user = User.new
+  end
+
+  def create
+    user = User.new(user_params)
+    if user.save
+      auto_login(user)
       redirect_to maps_path, green: "ユーザー登録が完了しました！"
     else
       flash.now[:pink] = "ユーザー登録に失敗しました"
@@ -10,7 +16,7 @@ class UsersController < ApplicationController
 
   private
 
-    def user_update_params
-      params.requre(:user).permit(:name, :email)
+    def user_params
+      params.require(:user).permit(:name, :email)
     end
 end

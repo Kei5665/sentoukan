@@ -1,5 +1,4 @@
 class QuestsController < ApplicationController
-  require 'geokit'
   def index
     quest = current_user.quests.last
     @shop = quest.shop
@@ -7,6 +6,8 @@ class QuestsController < ApplicationController
     gon.longitude = quest.longitude.to_f
     gon.shop = quest.shop
   end
+
+  def show;end
 
   def create
     quest = current_user.quests.build(quest_params)
@@ -18,12 +19,13 @@ class QuestsController < ApplicationController
   end
 
   def calculate
+    quest = current_user.quests.last
     within_can_clear_limits = 1.25
     shop = current_user.quests.last.shop
     distance = distance(geo_params,shop)
     if distance < within_can_clear_limits
       current_user.get_money
-      redirect_to maps_path, green: "お疲れ様でした！報酬は800円です！"
+      redirect_to quest_path(quest), green: "お疲れ様でした！報酬は800円です！"
     else
       render turbo_stream: turbo_stream.prepend(
         'error',

@@ -25,7 +25,11 @@ ul.dropdown-menu.p-2
         span.my-auto.ml-2.normal-case
           = user_name 
   li
-    
+    = link_to terms_path, class: 'menu-item' do
+      .flex.items-center.py-1
+        span.my-auto.ml-2.normal-case
+          | 利用規約
+    = link_to privacy_policy_path, class: 'menu-item' do
       .flex.items-center.py-1
         span.my-auto.ml-2.normal-case
           | 利用規約

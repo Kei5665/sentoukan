@@ -1,6 +1,7 @@
 class ShopsController < ApplicationController
   def index
-    @shops = Shop.all.order(created_at: :desc).page(params[:page])
+    @q = Shop.ransack(params[:q])
+    @shops = @q.result.order(created_at: :desc).page(params[:page])
   end
 
   def show

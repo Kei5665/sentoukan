@@ -1,6 +1,6 @@
 == render 'shared/nav'
 == render 'shops/form'
-.container.mx-auto.my-8
-  section.mx-5.mb-10
+.container.my-8.mx-auto
+  section.mx-5.mb-10.md:grid.grid-cols-3.gap-2
     = render @shops
   = paginate @shops

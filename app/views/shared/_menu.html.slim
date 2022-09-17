@@ -20,10 +20,10 @@ ul.dropdown-menu.p-2
         span.my-auto.ml-2.normal-case
           | 銭湯一覧
   li
-    a.menu-item[href="#"]
+    = link_to new_user_path, class: 'menu-item' do
       .flex.items-center.py-1
         span.my-auto.ml-2.normal-case
-          | アカウント
+          = user_name 
   li
     a.menu-item[href="#"]
       .flex.items-center.py-1

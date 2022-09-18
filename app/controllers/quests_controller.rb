@@ -19,7 +19,7 @@ class QuestsController < ApplicationController
   end
 
   def calculate
-    within_can_clear_limits = 1.25
+    within_can_clear_limits = 1000
     shop = current_user.quests.last.shop
     @distance = (distance(geo_params,shop) * 1000).round(0)
     if @distance < within_can_clear_limits

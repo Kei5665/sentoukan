@@ -22,10 +22,9 @@
 
 ![スクリーンショット 2022-09-18 10 19 11](https://user-images.githubusercontent.com/64511596/190881528-431cb4d1-e263-40e4-8c0f-a5b810d6bd12.png)
 
-## 3. twitterシェア
+## 3. 報酬獲得とtwitterシェア
 
-![スクリーンショット 2022-09-18 10 20 48](https://user-images.githubusercontent.com/64511596/190881530-c8365a62-20ea-4948-992c-9704bab30e65.png)
-
+![スクリーンショット 2022-09-18 14 45 57](https://user-images.githubusercontent.com/64511596/190910577-c6a3afe0-dc15-407e-a292-7b1f80c108c7.png)
 
 # 使用技術：
 

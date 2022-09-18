@@ -31,13 +31,13 @@
 
 ### バックエンド
 
-Ruby 3.1.0
+Ruby 3.1.0  
 Ruby on Rails 7.0.3
 
 ### フロントエンド
 
-JavaScript
-Tailwind CSS
+JavaScript  
+Tailwind CSS  
 Material Tailwind
 
 ### インフラ
@@ -45,9 +45,8 @@ Material Tailwind
 Heroku
 
 ## 使用API
-Google Maps JavaScript API（マップ検索に使用）
-Google Places API（店舗情報の取得に使用）
-Geolocation API（現在地の取得に使用）
+Google Maps JavaScript API（マップ検索に使用）  
+Geolocation API（現在地の取得に使用）  
 
 ## 距離測定について
 

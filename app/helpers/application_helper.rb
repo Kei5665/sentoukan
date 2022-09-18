@@ -24,7 +24,7 @@ module ApplicationHelper
     domain = if Rails.env.development?
                'http://0.0.0.0:3000'
              else
-               'https://sentoukan.herokuapp.com/'
+               'https://www.sentoukan.site/'
              end
     "#{domain}#{path}"
   end

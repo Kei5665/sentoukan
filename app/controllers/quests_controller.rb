@@ -1,4 +1,5 @@
 class QuestsController < ApplicationController
+  before_action :require_quests
   def index
     quest = current_user.quests.last
     @shop = quest.shop

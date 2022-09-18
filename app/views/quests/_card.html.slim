@@ -8,6 +8,19 @@
       button.button.button-gradient.button-orange.disable.py-1.px-2.font-bold#down
         svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6"
           path stroke-linecap="round" stroke-linejoin="round" d="M19.5 5.25l-7.5 7.5-7.5-7.5m15 6l-7.5 7.5-7.5-7.5"
+    turbo-frame#distance
+      .text-2xl.font-bold.text-grey-500.mb-4
+        | 目的地まで
+        span.text-5xl.ml-4.text-pink-400
+          = @distance
+        span.text-2xl.ml-4.text-grey-500
+          | m
+    .text-sm.text-grey-500.mb-4
+      | （クリア設定値：
+      span.text-lg
+        | 1000
+      span.ml-1
+        | m圏内）
     h3.font-bold
       = @shop.name
     p.mb-3.opacity-60

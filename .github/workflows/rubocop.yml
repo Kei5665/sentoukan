@@ -380,35 +380,3 @@ Style/TrailingCommaInHashLiteral:
 # 書き手に委ねるという意味で、Enabled: false にしています。使っても良い。
 Style/WordArray:
   Enabled: false
-
-# 0 <= foo && foo < 5 のように数直線上に並べるのは
-# コードを読みやすくするテクニックなので equality_operators_only に。
-# Style/YodaCondition:
-#   # TODO: rubocop 0.63.0以降はforbid_for_equality_operators_onlyなので依存を引き上げれば有効にできる
-#   EnforcedStyle: forbid_for_equality_operators_only
-
-# 条件式で arr.size > 0 が使われた時に
-#   if !arr.empty?
-#   else
-#   end
-# に修正されるのが嫌。
-# 中身を入れ替えて否定外しても良いんだけど、どちらが例外的な処理なのかが分かりづらくなる。
-Style/ZeroLengthPredicate:
-  Enabled: false
-
-Style/FrozenStringLiteralComment:
-  Enabled: false
-Style/GlobalStdStream:
-  Enabled: false
-Style/HashSyntax:
-  Enabled: false
-Style/SpecialGlobalVars:
-  Enabled: false
-Metrics/PerceivedComplexity:
-  Enabled: false
-Style/PerlBackrefs:
-  Enabled: false
-Layout/LineLength:
-  Enabled: false
-Style/RedundantFetchBlock:
-  Enabled: false

@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     return if current_user.quests.present?
 
     if current_user.quests.blank?
-      redirect_to maps_path, orange: "クエストを選択してください"
+      redirect_to maps_path, orange: 'クエストを選択してください'
     end
   end
 end

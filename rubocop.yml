@@ -395,7 +395,6 @@ Style/WordArray:
 # 中身を入れ替えて否定外しても良いんだけど、どちらが例外的な処理なのかが分かりづらくなる。
 Style/ZeroLengthPredicate:
   Enabled: false
-
 Style/FrozenStringLiteralComment:
   Enabled: false
 Style/GlobalStdStream:
@@ -407,8 +406,6 @@ Style/SpecialGlobalVars:
 Metrics/PerceivedComplexity:
   Enabled: false
 Style/PerlBackrefs:
-  Enabled: false
-Layout/LineLength:
   Enabled: false
 Style/RedundantFetchBlock:
   Enabled: false

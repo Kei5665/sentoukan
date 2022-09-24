@@ -7,10 +7,10 @@ class User < ApplicationRecord
 
   enum role: {
     general: 0,
-    admin: 1
+    admin: 1,
   }
 
-  def get_money
+  def earn_rewards
     compensation_amount = 800
     self.earned_money += compensation_amount
     self.save!

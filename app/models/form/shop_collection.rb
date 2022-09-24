@@ -1,18 +1,18 @@
 class Form::ShopCollection < Form::Base
-  FORM_COUNT = 20 #ここで、作成したい登録フォームの数を指定
+  FORM_COUNT = 20 # ここで、作成したい登録フォームの数を指定
   attr_accessor :shops
 
   def initialize(attributes = {})
     super attributes
-    self.shops = FORM_COUNT.times.map { Shop.new() } unless self.shops.present?
+    self.shops = FORM_COUNT.times.map { Shop.new } unless self.shops.present?
   end
 
-  def set_scraped_data(shops)
+  def put_data_into_the_form(shops)
     self.shops = shops
   end
 
   def shops_attributes=(attributes)
-    self.shops = attributes.map { |_, v| Shop.new(v) }
+    self.shops = attributes.map {|_, v| Shop.new(v) }
   end
 
   def save
@@ -23,8 +23,8 @@ class Form::ShopCollection < Form::Base
         end
       end
     end
-      return true
-    rescue => e
-      return false
+    true
+  rescue
+    false
   end
 end

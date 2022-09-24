@@ -1,10 +1,16 @@
 class QuestsController < ApplicationController
+<<<<<<< HEAD
+=======
+  before_action :require_quests, only: %i[index]
+>>>>>>> a3254c7b79e4a5c6b964ea0c318da7259824961e
   def index
     quest = current_user.quests.last
     @shop = quest.shop
     gon.latitude = quest.latitude.to_f
     gon.longitude = quest.longitude.to_f
     gon.shop = quest.shop
+    current_position = { latitude: quest.latitude, longitude: quest.longitude }
+    @distance = @shop.range_from(current_position)
   end
 
   def create
@@ -17,17 +23,31 @@ class QuestsController < ApplicationController
   end
 
   def calculate
-    within_can_clear_limits = 1.25
+    permissible_range = 1000
     shop = current_user.quests.last.shop
+<<<<<<< HEAD
     distance = distance(geo_params, shop)
     if distance < within_can_clear_limits
       current_user.recieve_money
       redirect_to maps_path, green: 'お疲れ様でした！報酬は800円です！'
+=======
+    @distance = shop.range_from(current_position_params)
+    if @distance < permissible_range
+      current_user.earn_rewards
+      redirect_to new_user_path, green: 'お疲れ様でした！報酬は800円です！'
+>>>>>>> a3254c7b79e4a5c6b964ea0c318da7259824961e
     else
-      render turbo_stream: turbo_stream.prepend(
-        'error',
-        partial: 'shared/error',
-      )
+      render turbo_stream: [
+        turbo_stream.prepend(
+          'error',
+          partial: 'shared/error',
+        ),
+        turbo_stream.update(
+          'distance',
+          partial: 'quests/distance',
+          locals: { distance: @distance },
+        ),
+      ]
     end
   end
 
@@ -37,9 +57,10 @@ class QuestsController < ApplicationController
       params.require(:q).permit(:shop_id, :latitude, :longitude)
     end
 
-    def geo_params
+    def current_position_params
       params.require(:q).permit(:latitude, :longitude)
     end
+<<<<<<< HEAD
 
     def distance(from, to)
       # ラジアン単位に変換
@@ -73,4 +94,6 @@ class QuestsController < ApplicationController
     def deg2rad(degrees)
       degrees.to_f / 180.0 * Math::PI
     end
+=======
+>>>>>>> a3254c7b79e4a5c6b964ea0c318da7259824961e
 end

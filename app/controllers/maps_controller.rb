@@ -4,8 +4,8 @@ class MapsController < ApplicationController
     default_lat = 35.68141918996472
     default_lng = 139.76709261065324
     if params[:q]
-      latitude = geo_params[:latitude].to_f
-      longitude = geo_params[:longitude].to_f
+      latitude = current_position_params[:latitude].to_f
+      longitude = current_position_params[:longitude].to_f
       shops = Shop.within(search_radius, origin: [latitude, longitude])
       gon.latitude = latitude
       gon.longitude = longitude
@@ -21,7 +21,7 @@ class MapsController < ApplicationController
 
   private
 
-    def geo_params
+    def current_position_params
       params.require(:q).permit(:latitude, :longitude)
     end
 end

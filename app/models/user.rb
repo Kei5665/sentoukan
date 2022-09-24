@@ -10,7 +10,11 @@ class User < ApplicationRecord
     admin: 1,
   }
 
+<<<<<<< HEAD
   def recieve_money
+=======
+  def earn_rewards
+>>>>>>> a3254c7b79e4a5c6b964ea0c318da7259824961e
     compensation_amount = 800
     self.earned_money += compensation_amount
     self.save!

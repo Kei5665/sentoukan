@@ -4,6 +4,6 @@ class Quest < ApplicationRecord
 
   enum role: {
     in_progress: 0,
-    finished: 1
+    finished: 1,
   }
 end

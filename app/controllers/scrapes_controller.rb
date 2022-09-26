@@ -15,7 +15,11 @@ class ScrapesController < ApplicationController
     scraped_data = scrape.scrape(params[:scrape_url])
 
     shop_collection = Form::ShopCollection.new
+<<<<<<< HEAD
+    shop_collection.assign(scraped_data)
+=======
     shop_collection.put_data_into_the_form(scraped_data)
+>>>>>>> a3254c7b79e4a5c6b964ea0c318da7259824961e
 
     render turbo_stream: turbo_stream.replace(
       'scrapes',

@@ -54,26 +54,21 @@ RSpec.describe 'Maps', type: :system do
     end
   end
 
-  describe '検索時に表示される画面' do
+  describe 'クエスト画面に遷移できる' do
     before do
       near_shop
       far_shop
       click_on '周辺を検索'
-      expect(current_path).to eq(maps_path), 'mapsページへリダイレクトされていません'
-    end
+      expect(current_path).to eq(maps_path)
 
-    it "ピンが3つ表示される", js: true do
-      within('#map') do
-        expect(page.all("img[src$='https://maps.gstatic.com/mapfiles/transparent.png']").count).to eq 3
-      end
-    end
-
-    it "ピンをクリックすると店情報が表示される" do
       pin = find("map#gmimap1 area", visible: false)
       pin.click
       expect(page).to have_content('銀座湯')
     end
+
+    it "クエスト画面に遷移できる" do
+      click_on 'ここに行く'
+      expect(page).to have_content('クエストを開始します！')
+    end
   end
-
-
 end

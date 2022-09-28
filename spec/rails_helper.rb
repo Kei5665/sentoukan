@@ -23,7 +23,7 @@ require 'rspec/retry'
 # directory. Alternatively, in the individual `*_spec.rb` files, manually
 # require only the support files necessary.
 #
-Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each { |f| require f }
+Dir[Rails.root.join('spec', 'support', '**', '*.rb')].sort.each {|f| require f }
 
 # Checks for pending migrations and applies them before tests are run.
 # If you are not using ActiveRecord, you can remove these lines.
@@ -42,15 +42,15 @@ RSpec.configure do |config|
   # instead of true.
   config.use_transactional_fixtures = true
 
-    # 実行中にリトライのステータスを表示する
-    config.verbose_retry = true
-    # リトライの原因となった例外を表示する
-    config.display_try_failure_messages = true
-  
-    # js: true のフィーチャスペックのみリトライを有効にする
-    config.around :each, :js do |ex|
-      ex.run_with_retry retry: 3
-    end  
+  # 実行中にリトライのステータスを表示する
+  config.verbose_retry = true
+  # リトライの原因となった例外を表示する
+  config.display_try_failure_messages = true
+
+  # js: true のフィーチャスペックのみリトライを有効にする
+  config.around :each, :js do |ex|
+    ex.run_with_retry retry: 3
+  end
 
   # You can uncomment this line to turn off ActiveRecord support entirely.
   # config.use_active_record = false

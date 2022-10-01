@@ -12,7 +12,7 @@ RSpec.describe 'Quests', type: :system do
   end
 
   describe '現在地が1km圏内だった場合' do
-    before do      
+    before do
       near_shop
       click_on '周辺を検索'
       expect(current_path).to eq(maps_path)
@@ -22,7 +22,7 @@ RSpec.describe 'Quests', type: :system do
       expect(page).to have_content('クエストを開始します！')
     end
 
-    it 'クエスト画面に遷移している', js: true  do
+    it 'クエスト画面に遷移している', js: true do
       expect(page).to have_content('銀座湯')
       expect(page).to have_content('目的地まで')
     end
@@ -34,11 +34,11 @@ RSpec.describe 'Quests', type: :system do
   end
 
   describe '現在地が1km圏外だった場合' do
-    before do      
+    before do
       far_shop
       click_on '周辺を検索'
       expect(current_path).to eq(maps_path)
-  
+
       pin = find('map#gmimap1 area', visible: false)
       pin.click
       click_on 'ここに行く'
@@ -55,6 +55,4 @@ RSpec.describe 'Quests', type: :system do
       expect(page).to have_content('もっと近づいて！')
     end
   end
-
-
 end

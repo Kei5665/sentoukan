@@ -7,7 +7,7 @@ class Form::ShopCollection < Form::Base
     self.shops = FORM_COUNT.times.map { Shop.new } unless self.shops.present?
   end
 
-  def put_data_into_the_form(shops)
+  def assign(shops)
     self.shops = shops
   end
 

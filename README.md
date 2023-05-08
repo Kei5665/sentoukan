@@ -46,14 +46,3 @@ Heroku
 ## 使用API
 Google Maps JavaScript API（マップ検索に使用）  
 Geolocation API（現在地の取得に使用）  
-
-## 距離測定について
-
-二点間の距離は、大円距離の計算式としてVincenty法を利用しています。
-
-φ1,λ1とφ2,λ2をそれぞれ点1と点2の緯度と経度とする。また、Δφ,Δλはその差の絶対値である。
-
-![8d1fd4f0e438bb74d249c7e552e2e419ceb84a17](https://user-images.githubusercontent.com/64511596/190977895-5ffde18c-a937-4d00-810b-4ae9af6fffd3.svg)
-
-
-
